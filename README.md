@@ -1,111 +1,99 @@
-# Granger Causality Analysis of Average Hourly Wages and the U.S. Housing Price Index
+# CS3 GrangerCausality
+A DS 4002 Case Study by Jonah Lee
 
-## Repository Contents
-The goal of this project is to perform a Granger Causality analysis to determine whether average hourly wage in the United States can be a reliable predictor of the U.S. National Home Price Index (USNHPI). The DS-4002_Group5_Project2 repository contains the DATA folder (includes our two original and our final dataset of interest as well as more information about the data located in the data appendix), the SCRIPTS folder (includes code for preprocessing/cleaning the dataset, testing the stationarity of the data, and running the Granger Causaility to show predictive power), the OUTPUTS folder (contains screenshots or PDFs of our results from the lag plots, stationarity tests, and Granger Causality), and the LICENSE.md and README.md files.
+## Overview
+Can average hourly wages in the United States predict where home prices are headed? That is the question at the center of this case study. Using monthly time series data from the Federal Reserve Bank of St. Louis (FRED) — spanning nearly two decades of economic history including the 2008 financial crisis and the COVID-19 pandemic — you will apply Granger causality to determine whether wage data improves our ability to forecast the U.S. National Home Price Index (USNHPI).
 
-## Section 1: Software and Platform
+This case study is targeted at second-year UVA students with some Python experience. You do not need prior experience with time series analysis or econometrics. Everything you need to get started is in this repository.
 
-### Software/Platform
-This project was developed and run using: 
-- Google Colab/Jupyter Notebook on a Mac
+## Hook and Rubric
+The hook document and rubric for this case study are located in the root of this repository:
 
-### Packages
-The following Python packages are required:
+* `CS3_Hook_Document.pdf` - Read this first. It frames the problem and your mission.
+* `CS3_Rubric.pdf` - Read this second. It describes exactly what you need to produce and how you will be graded.
 
-- pandas
-- numpy
-- matplotlib.pyplot
-- lag_plot (from pandas.plotting)
-- kpss, adfuller, grangercausalitytests (from statsmodels.tsa.stattools_
-- VAR (from statsmodels.tsa.vector_ar.var_model)
+Both documents should be referenced continuously throughout your work.
 
-## Section 2: Documentation Map
-```text
-DS-4002_Group5_Project1/
-│
-├── DATA/
-│ ├── Avg_Hourly_Wage_data.csv
-│ ├── P2_Data.csv
-│ ├── P2_Data_Appendix.csv
-│ ├── P2_Data_With_LogDiff.csv
-│ ├── USNHPI_data.csv
-│
-├── OUTPUT/
-│ ├── choosing_p_forVARmodel_values.png
-│ ├── granger_causation_matrix_p=14.png
-│ ├── granger_causation_matrix_p=2.png
-│ ├── lagplots_avghourlywage_USNHPI.png
-│ ├── lagplots_stationaritytests_differences.pdf
-│ ├── lagplots_stationaritytests_logdifferences.pdf
-│
-├── SCRIPTS/
-│ ├── 01_preprocess.py
-│ ├── 02_checkstationarity.py
-│ ├── 03_grangercausality.py
-│
-├── LICENSE
-└── README.md
+## Software and Platform
+
+* Language: Python 3.12
+* Platform: Google Colab (recommended) or any machine with a standard Python environment
+* Packages required:
+  * `pandas`
+  * `numpy`
+  * `matplotlib`
+  * `statsmodels`
+  * `scipy`
+
+Install all packages with:
+
+```
+pip install pandas numpy matplotlib statsmodels scipy
 ```
 
-### Folder Descriptions
-- **DATA**: Contains two original datasets and our final datatset alongside the data appendix that includes more information about our variables and observations.
-  - Original datasets of 238 months (or observations) ranging from March of 2006 to December of 2025.
-  - Cleaned dataset after preprocessing.
-  - Our Data Appendix describes our unit of observation as well as all of the key variables we will be utilizing in our analysis alongside some exploratory visuals associated with some of our variables of interest. 
-- **SCRIPTS**: Contains python scripts for data preprocessing/cleaning, lag plots and stationarity tests, and the Granger Causality analysis.
-- **OUTPUT**: Contains png files of the lag plots for avg_hourly_wage and USNHPI, results from the multivariate information criterion on selecting the order p for the VAR model, and the granger causation matrices for VAR models with order p=2 and p=14. Contains PDFs of the lag plots and stationarity tests for avg_hourly_wage_differences, USNHPI_differences, avg_hourly_wage_log_differences, and USNHPI_log_differences. 
-- **LICENSE**: MIT license was selected based on recommendation from the DS 4002 Ml3 Rubric.
-- **README.md**: Instructions, documentation, and respository overview. 
+## Repository Map
 
-## Section 3: Instructions for Reproduction
+```
+CS3_GrangerCausality/
+├── CS3_Hook_Document.pdf         # Hook document — read first
+├── CS3_Rubric.pdf                # Rubric — your guide to success
+├── README.md                     # This file
+├── LICENSE.md                    # License terms
+├── REFERENCES.md                 # All references in IEEE format
+│
+├── DATA/
+│   ├── raw_wages.csv             # Raw average hourly earnings data from FRED
+│   ├── raw_hpi.csv               # Raw U.S. National Home Price Index data from FRED
+│   └── merged_cleaned.csv        # Cleaned and merged dataset ready for analysis
+│
+├── SCRIPTS/
+│   ├── 01_data_merge_clean.py    # Download instructions, merging, and cleaning
+│   ├── 02_eda.py                 # Exploratory data analysis and visualizations
+│   ├── 03_stationarity_tests.py  # ADF and KPSS stationarity tests
+│   ├── 04_var_order_selection.py # VAR model lag order selection (AIC, BIC, HQIC, FPE)
+│   └── 05_granger_causality.py   # Granger causality test and results
+│
+├── OUTPUT/
+│   ├── time_series_plot.png      # Wages and USNHPI over time with key periods marked
+│   ├── correlation_matrix.png    # Correlation matrix of key variables
+│   ├── monthly_wage_diff.png     # Average hourly wage difference by month
+│   ├── monthly_hpi_diff.png      # Average USNHPI difference by month
+│   ├── wage_vs_hpi_linear.png    # Linear relationship between wage and USNHPI
+│   └── granger_causation_matrix.png  # Final Granger causation matrix with p-values
+│
+└── Materials/                    # Supplemental readings to get you started
+    ├── intro_to_granger_causality.pdf     # Blog post: Aptech Systems explainer
+    └── granger_causality_handbook_ch4.pdf # Technical: AIM Time Series Handbook, Ch. 4
+```
 
-- **Step 1**: Clone the repository. Cloning creates a complete local copy of the repository, including all files and branches. Make sure that you can see the DATA, OUTPUT, and SCRIPTS folders. Confirm that the Avg_Hourly_Wage_data.csv and USNHPI_data.csv exist in the DATA folder. 
-- **Step 2**: In Google Colab, or the desired platform of choice, run the 01_preprocess.py script. The 01_preprocess.py script merges the Avg_Hourly_Wage_data.csv and USNHPI_data.csv dataset together so we can analyze both variables at once with respect to time. The 01_preprocess.py script produces a new dataset, P2_Data.csv. Upload and save P2_Data.csv to the DATA folder. 
-- **Step 3**: After preprocessing the data, run the 02_checkstationarity.py script.
-  - This script will:
-    - Read the P2_Data.csv dataset
-    - Verify all dates are in the correct format
-    - Verify time intervals are constant
-    - Check for and remove missing values
-    - Create lag plots to check if the data is stationary
-    - Use the KPSS and ADF tests to verify stationarity
-    - Create two new columns in the dataset: avg_hourly_wage_log_diff and USNHPI_log_diff
-    - Save the new dataset to the repository as P2_Data_With_LogDiff
+## Data
+Both datasets are freely available from the Federal Reserve Bank of St. Louis (FRED) and are small enough to include directly in this repository.
 
-  - The output should include:
-    - The time intervals and NA values for P2_Data.csv
-    - The lag plots for avg_hourly_wage and USNHPI
-    - The lag plots for avg_hourly_wage_diff and USNHPI_diff
-    - The results from the KPSS and ADF tests for avg_hourly_wage_diff and USNHPI_diff
-    - The lag plots for avg_hourly_wage_log_diff and USNHPI_log_diff
-    - The results from the KPSS and ADF tests for avg_hourly_wage_log_diff and USNHPI_log_diff
-   
-  - Some notes for Step 3:
-    - You will see that the original variables, avg_hourly_wage and USNHPI, show a strong trend. This signals non-stationarity. This is why we then test the differences, avg_hourly_wage_diff and USNHPI_diff. From the kpss and adf tests, we can see that the results still show non-stationarity. As a result, we take a logarithmic transformation of avg_hourly_wage and USNHPI and compute the differences to get avg_hourly_wage_log_diff and USNHPI_log_diff. Functions are created for lag plots and the KPSS and ADF tests to make this process easier.
-   
-- **Step 4**: Finally, we can perform the Granger Causality test. To do this, run the 03_grangercausality.py script.
-  - This script will:
-    - read the P2_Data_With_LogDiff.csv dataset
-    - split the dataset in a training set (80%) and a test set (20%)
-    - select the VAR order p by computing different multivariate information criterion values (AIC, BIC, FPE, HQIC)
-    - fit the VAR model with the chosen order
-    - test variables for Granger Causality using the SSR-based chi-squared test
-    - output a Granger Causation matrix with p-values from the test
-   
-  - The output should include:
-    - Plots for the VAR order p by different multivariate information criterion
-    - The order p results from each multivariate information criterion
-    - The Granger Causation matrix for p=2
-    - The Granger Causation matrix for p=14
+* **Average Hourly Earnings of All Employees, Total Private** — Series ID: `CES0500000003`
+  Download from: https://fred.stlouisfed.org/series/CES0500000003
+* **S&P/Case-Shiller U.S. National Home Price Index** — Series ID: `CSUSHPINSA`
+  Download from: https://fred.stlouisfed.org/series/CSUSHPINSA
 
-- **Step 5**: Verify your outputs match those in the OUTPUT folder.
+Download both CSVs and place them in the `DATA/` folder. Script `01_data_merge_clean.py` will handle the rest.
 
-## References
+Dataset summary:
 
-- [1] Eric, “Introduction to Granger Causality,” Aptech Systems Blog, Oct. 4, 2021. [Online]. Available: https://www.aptech.com/blog/introduction-to-granger-causality/. [Accessed: Mar. 11, 2026].
-- [2] Grewal, A., Hepburn, K. J., Lear, S. A., Adshade, M., & Card, K. G. (2024). The impact of housing prices on residents’ health: A systematic review. BMC Public Health. Retrieved from https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10983630/
-- [3] Louie, S., Mondragon, J., & Wieland, J. F. (2025). Supply constraints do not explain house price and quantity growth across U.S. cities (Federal Reserve Bank of San Francisco Working Paper No. 2025-06). Federal Reserve Bank of San Francisco. https://www.frbsf.org/wp-content/uploads/wp2025-06.pdf
-- [4] PhD Students in Data Science Batch 2023, Asian Institute of Management, “Chapter 4: Granger Causality Test,” Time Series Analysis Handbook, 2020. - [Online]. Available: https://phdinds-aim.github.io/time_series_handbook/04_GrangerCausality/04_GrangerCausality.html. [Accessed: Mar. 9, 2026].
-- [5] ScienceDirect. (n.d.). Granger-causality. In ScienceDirect Topics. Elsevier. Retrieved February 25, 2026, from https://www.sciencedirect.com/topics/social-sciences/granger-causality
-- [6] U.S. Bureau of Labor Statistics. (n.d.). Average hourly earnings of all employees, total private (CES0500000003). Retrieved March 11, 2026, from FRED, Federal Reserve Bank of St. Louis: https://fred.stlouisfed.org/series/CES0500000003
-- [7] U.S. Federal Housing Finance Agency. (n.d.). S&P/Case-Shiller U.S. National Home Price Index (CSUSHPINSA). Retrieved March 11, 2026, from FRED, Federal Reserve Bank of St. Louis: https://fred.stlouisfed.org/series/CSUSHPINSA
+* 238 monthly observations from March 2006 through December 2025
+* 6 columns after merging and cleaning, including lag and log-differenced variables
+* Key variables: `avg_hourly_wage`, `USNHPI`, `avg_hourly_wage_lag`, `avg_hourly_wage_log_diff`, `USNHPI_log_diff`
+* Notable periods covered: 2008 financial crisis, COVID-19 pandemic, post-pandemic housing surge
+
+## How to Reproduce Results
+
+1. Download both FRED datasets using the links above and place the CSVs in the `DATA/` folder.
+2. Install the required packages listed above.
+3. Run the scripts in `SCRIPTS/` in order, starting with `01_data_merge_clean.py`. Each script builds on the output of the one before it.
+4. Review your output figures against the plots in the `OUTPUT/` folder to verify your results match.
+5. The final Granger causation matrix produced by `05_granger_causality.py` is the central result of the analysis.
+
+Note: All scripts were developed and tested in Python 3.12. Runtime is minimal — none of the scripts should take more than a minute to run on a standard laptop.
+
+## Reference Materials
+Two reference articles are provided in the `Materials/` folder to help you understand Granger causality before diving into the code. Start with the Aptech blog post if you are new to the method, then work through the handbook chapter for a more technical treatment.
+
+All full citations are in `REFERENCES.md`.
