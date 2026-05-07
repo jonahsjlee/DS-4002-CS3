@@ -34,30 +34,31 @@ pip install pandas numpy matplotlib statsmodels scipy
 ## Repository Map
 
 ```
-CS3_GrangerCausality/
-├── CS3_Hook_Document.pdf         # Hook document
+DS-4002-CS3/
+├── Hook_Document.pdf         # Hook document
 ├── Case Study Rubric.pdf         # Rubric
 ├── README.md                     # This file
 ├── LICENSE.md                    # License terms
 │
-├── DATA/
-│   ├── P2_Data.csv
-│   ├── USNHPI_data.csv
-│   ├── Avg_Hourly_Wage_data.csv
-│   ├── P2_Data_With_LogDiff.csv
-│   ├── P2_Data_Appendix.pdf
-│
-├── OUTPUT/
-│   ├── choosing_p_forVARmodel_values.png
-│   ├── granger_causation_matrix_p=2.png
-│   ├── granger_causation_matrix_p=14.png
-│   ├── lagplots_avghourlywage_USNHPI.png
-│   ├── lagplots_stationaritytests_differences.pdf
-│   └── lagplots_stationaritytests_logdifferences.pdf
-│
-└── ARTICLES/
-    ├── Chapter 4_ Granger Causality Test - Time Series Analysis Handbook.pdf
-    └── Introduction to Granger Causality_Aptech.pdf
+├── Supplemental Materials/
+    ├── DATA/
+    │   ├── P2_Data.csv
+    │   ├── USNHPI_data.csv
+    │   ├── Avg_Hourly_Wage_data.csv
+    │   ├── P2_Data_With_LogDiff.csv
+    │   ├── P2_Data_Appendix.pdf
+    │
+    ├── OUTPUT/
+    │   ├── choosing_p_forVARmodel_values.png
+    │   ├── granger_causation_matrix_p=2.png
+    │   ├── granger_causation_matrix_p=14.png
+    │   ├── lagplots_avghourlywage_USNHPI.png
+    │   ├── lagplots_stationaritytests_differences.pdf
+    │   └── lagplots_stationaritytests_logdifferences.pdf
+    │
+    └── ARTICLES/
+        ├── Chapter 4_ Granger Causality Test - Time Series Analysis Handbook.pdf
+        └── Introduction to Granger Causality_Aptech.pdf
 ```
 
 ## Data
