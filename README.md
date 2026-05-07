@@ -36,10 +36,9 @@ pip install pandas numpy matplotlib statsmodels scipy
 ```
 CS3_GrangerCausality/
 ├── CS3_Hook_Document.pdf         # Hook document
-├── CS3_Rubric.pdf                # Rubric
+├── Case Study Rubric.pdf                # Rubric
 ├── README.md                     # This file
 ├── LICENSE.md                    # License terms
-├── REFERENCES.md                 # All references
 │
 ├── DATA/
 │   ├── P2_Data.csv
@@ -49,16 +48,16 @@ CS3_GrangerCausality/
 │   ├── P2_Data_Appendix.pdf
 │
 ├── OUTPUT/
-│   ├── time_series_plot.png
-│   ├── correlation_matrix.png
-│   ├── monthly_wage_diff.png
-│   ├── monthly_hpi_diff.png
-│   ├── wage_vs_hpi_linear.png
-│   └── granger_causation_matrix.png
+│   ├── choosing_p_forVARmodel_values.png
+│   ├── granger_causation_matrix_p=2.png
+│   ├── granger_causation_matrix_p=14.png
+│   ├── lagplots_avghourlywage_USNHPI.png
+│   ├── lagplots_stationaritytests_differences.pdf
+│   └── lagplots_stationaritytests_logdifferences.pdf
 │
-└── Materials/
-    ├── intro_to_granger_causality.pdf
-    └── granger_causality_handbook_ch4.pdf
+└── ARTICLES/
+    ├── Chapter 4_ Granger Causality Test - Time Series Analysis Handbook.pdf
+    └── Introduction to Granger Causality_Aptech.pdf
 ```
 
 ## Data
