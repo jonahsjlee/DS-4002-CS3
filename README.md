@@ -70,8 +70,9 @@ The REFERENCES.md file contains the complete source URLs.
 
 1. Install the required packages listed above.
 2. Clean and/or merge the data.
-3. Check your figures against the plots in `OUTPUT/` to verify.
-4. A Granger causation matrix is the main result you are working toward.
+3. Write scripts.
+4. Check your figures against the plots in `OUTPUT/` to verify.
+5. A Granger causation matrix is the main result you are working toward.
 
 ## Reference Materials
 Two articles are included in `Supplemental Materials/ARTICLES/` to help you get up to speed on Granger causality before writing any code. If you are new to the method, start with the Aptech blog post since it is more accessible. The handbook chapter gets more technical and is worth reading once you have the basic idea down.
