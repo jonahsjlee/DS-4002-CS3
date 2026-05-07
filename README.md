@@ -67,11 +67,10 @@ The REFERENCES.md file contains the complete source URLs.
 
 ## How to Reproduce Results
 
-1. Download both FRED datasets and place the CSVs in the `DATA/` folder.
-2. Install the required packages listed above.
-3. Clean and/or merge the data.
-4. Check your figures against the plots in `OUTPUT/` to verify.
-5. The Granger causation matrix from `05_granger_causality.py` is the main result you are working toward.
+1. Install the required packages listed above.
+2. Clean and/or merge the data.
+3. Check your figures against the plots in `OUTPUT/` to verify.
+4. A Granger causation matrix is the main result you are working toward.
 
 ## Reference Materials
 Two articles are included in `Materials/` to help you get up to speed on Granger causality before writing any code. If you are new to the method, start with the Aptech blog post since it is more accessible. The handbook chapter gets more technical and is worth reading once you have the basic idea down.
