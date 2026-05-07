@@ -9,8 +9,8 @@ This case study is targeted at second-year UVA students with some Python experie
 ## Hook and Rubric
 The hook document and rubric are both in the root of this repository:
 
-* `CS3_Hook_Document.pdf` — Read this first. It frames the problem and your mission.
-* `CS3_Rubric.pdf` — Read this second. It describes what you need to produce and how you will be assessed.
+* `Hook_Document.pdf` — Read this first. It frames the problem and your mission.
+* `Case Study Rubric.pdf` — Read this second. It describes what you need to produce and how you will be assessed.
 
 I would recommend coming back to both of these as you work through the analysis, not just at the beginning.
 
