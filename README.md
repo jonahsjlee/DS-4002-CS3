@@ -42,8 +42,9 @@ CS3_GrangerCausality/
 ├── REFERENCES.md                 # All references
 │
 ├── DATA/
-│   ├── raw_wages.csv
-│   ├── raw_hpi.csv
+│   ├── P2_Data.csv
+│   ├── USNHPI_data.csv
+│   ├── Avg_Hourly_Wage_data.csv
 │
 ├── OUTPUT/
 │   ├── time_series_plot.png
