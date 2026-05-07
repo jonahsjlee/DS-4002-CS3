@@ -74,6 +74,5 @@ The REFERENCES.md file contains the complete source URLs.
 4. A Granger causation matrix is the main result you are working toward.
 
 ## Reference Materials
-Two articles are included in `Materials/` to help you get up to speed on Granger causality before writing any code. If you are new to the method, start with the Aptech blog post since it is more accessible. The handbook chapter gets more technical and is worth reading once you have the basic idea down.
+Two articles are included in `Supplemental Materials/ARTICLES/` to help you get up to speed on Granger causality before writing any code. If you are new to the method, start with the Aptech blog post since it is more accessible. The handbook chapter gets more technical and is worth reading once you have the basic idea down.
 
-All full citations are in `REFERENCES.md`.
