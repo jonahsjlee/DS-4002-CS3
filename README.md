@@ -45,6 +45,8 @@ CS3_GrangerCausality/
 │   ├── P2_Data.csv
 │   ├── USNHPI_data.csv
 │   ├── Avg_Hourly_Wage_data.csv
+│   ├── P2_Data_With_LogDiff.csv
+│   ├── P2_Data_Appendix.pdf
 │
 ├── OUTPUT/
 │   ├── time_series_plot.png
