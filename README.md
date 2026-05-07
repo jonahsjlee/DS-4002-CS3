@@ -36,7 +36,7 @@ pip install pandas numpy matplotlib statsmodels scipy
 ```
 CS3_GrangerCausality/
 ├── CS3_Hook_Document.pdf         # Hook document
-├── Case Study Rubric.pdf                # Rubric
+├── Case Study Rubric.pdf         # Rubric
 ├── README.md                     # This file
 ├── LICENSE.md                    # License terms
 │
