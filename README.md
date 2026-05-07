@@ -46,13 +46,6 @@ CS3_GrangerCausality/
 │   ├── raw_hpi.csv
 │   └── merged_cleaned.csv
 │
-├── SCRIPTS/
-│   ├── 01_data_merge_clean.py
-│   ├── 02_eda.py
-│   ├── 03_stationarity_tests.py
-│   ├── 04_var_order_selection.py
-│   └── 05_granger_causality.py
-│
 ├── OUTPUT/
 │   ├── time_series_plot.png
 │   ├── correlation_matrix.png
@@ -67,7 +60,7 @@ CS3_GrangerCausality/
 ```
 
 ## Data
-Both datasets can be accessed at the Federal Reserve Bank of St. Louis and are small enough to be included in the repository. Please download both CSV files and place them in the DATA directory. The script `01_data_merge_clean.py` will cover the merging and cleaning process.
+Both datasets can be accessed at the Federal Reserve Bank of St. Louis and are small enough to be included in the repository. Please download both CSV files and place them in the DATA directory.
 
 The REFERENCES.md file contains the complete source URLs.
 
@@ -75,11 +68,8 @@ The REFERENCES.md file contains the complete source URLs.
 
 1. Download both FRED datasets and place the CSVs in the `DATA/` folder.
 2. Install the required packages listed above.
-3. Run the scripts in 'SCRIPTS/' in order, starting with `01_data_merge_clean.py`. 
-4. Check your figures against the plots in `OUTPUT/` to verify.
-5. The Granger causation matrix from `05_granger_causality.py` is the main result you are working toward.
-
-None of the scripts should take more than a minute to run on a standard laptop.
+3. Check your figures against the plots in `OUTPUT/` to verify.
+4. The Granger causation matrix from `05_granger_causality.py` is the main result you are working toward.
 
 ## Reference Materials
 Two articles are included in `Materials/` to help you get up to speed on Granger causality before writing any code. If you are new to the method, start with the Aptech blog post since it is more accessible. The handbook chapter gets more technical and is worth reading once you have the basic idea down.
