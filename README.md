@@ -44,7 +44,6 @@ CS3_GrangerCausality/
 ├── DATA/
 │   ├── raw_wages.csv
 │   ├── raw_hpi.csv
-│   └── merged_cleaned.csv
 │
 ├── OUTPUT/
 │   ├── time_series_plot.png
@@ -68,8 +67,9 @@ The REFERENCES.md file contains the complete source URLs.
 
 1. Download both FRED datasets and place the CSVs in the `DATA/` folder.
 2. Install the required packages listed above.
-3. Check your figures against the plots in `OUTPUT/` to verify.
-4. The Granger causation matrix from `05_granger_causality.py` is the main result you are working toward.
+3. Clean and/or merge the data.
+4. Check your figures against the plots in `OUTPUT/` to verify.
+5. The Granger causation matrix from `05_granger_causality.py` is the main result you are working toward.
 
 ## Reference Materials
 Two articles are included in `Materials/` to help you get up to speed on Granger causality before writing any code. If you are new to the method, start with the Aptech blog post since it is more accessible. The handbook chapter gets more technical and is worth reading once you have the basic idea down.
